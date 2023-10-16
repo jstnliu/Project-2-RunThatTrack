@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<% if (songs.length) { %>
+    <% songs.forEach((song) => { %>
+        <div>
+            Title: <%= song.title %>  
+        </div>
+        <div>
+            Artist: <% song.artist %>
+        </div>
+   <% }); %>
+<% } else { %>
+    <h2>No Posts Yet...</h2>
+<% } %>
