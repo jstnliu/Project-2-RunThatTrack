@@ -31,5 +31,5 @@ async function create(req, res) {
 
 async function show(req, res) {
     const song = await Song.findById(req.params.id);
-    res.render('songs/show', { title: 'Song Post', song})
+    res.render('songs/show', { title: 'The Rundown', song})
 }

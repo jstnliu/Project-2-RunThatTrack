@@ -12,4 +12,5 @@ const mongoose = require('mongoose');
   }, {
     timestamps: true
   });
+  
  module.exports = mongoose.model('User', userSchema);

@@ -10,4 +10,16 @@
     <div>
         <%= song.caption %>
     </div>
+
+</section>
+<section>
+<h3>Comments</h3>
+    <% if (user) { %>
+        <form method="POST" action="/songs/<% song._id %>/comments">
+            <textarea name="content" value="Let 'Em Know How You Feel"></textarea>
+        </form>
+    <% } else { %>
+
+    <% } %>
+
 </section>

@@ -15,5 +15,4 @@ router.get('/:id', songsCtrl.show);
 // POST /songs
 router.post('/', ensureLoggedIn, songsCtrl.create);
 
-
 module.exports = router;
