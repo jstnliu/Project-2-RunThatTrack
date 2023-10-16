@@ -2,9 +2,34 @@ const Song = require('../models/song');
 
 module.exports = {
     index,
+    new: newSong,
+    create,
+    show,
 };
 
 async function index(req, res) {
     const songs = await Song.find({});
     res.render('songs/index', { title: 'All Posts', songs});
+}
+
+async function newSong(req, res) {
+    res.render('songs/new', { title: 'Create a Song Post!', errorMsg: '' });
+}
+
+async function create(req, res) {
+    try {
+        // Update this line because now we need the _id of the new movie
+        const song = await Song.create(req.body);
+        // Redirect to the new movie's show functionality 
+        res.redirect(`/songs/${song._id}`);
+      } catch (err) {
+        // Typically some sort of validation error
+        console.log(err);
+        res.render('songs/new', { errorMsg: err.message });
+      }
+}
+
+async function show(req, res) {
+    const song = await Song.findById(req.params.id);
+    res.render('songs/show', { title: 'Song Post', song})
 }

@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<form action="/songs" method="POST">
+    <label>Song Title:</label>
+    <input type="text" name="title">
+    <label>Artist Name:</label>
+    <input type="text" name="artist">
+    <label>Share Your Thoughts Below...</label>
+    <textarea name="caption"></textarea>
+    <input type="submit" value="Share Post">
+</form>
+
+<%- include('../partials/footer') %>

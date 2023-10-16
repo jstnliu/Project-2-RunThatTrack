@@ -3,12 +3,20 @@
 <% if (songs.length) { %>
     <% songs.forEach((song) => { %>
         <div>
-            Title: <%= song.title %>  
+            "<a href="/songs/<%= song._id %>"><%= song.title %></a>"  
         </div>
         <div>
-            Artist: <% song.artist %>
+            By <%= song.artist %>
         </div>
+        <div>
+            <%= song.caption %>
+        </div>
+        <div>
+            
+        </div>
+    &nbsp;
    <% }); %>
 <% } else { %>
     <h2>No Posts Yet...</h2>
+    <a href="/songs/new">Get Started on a Post Here!</a>
 <% } %>
