@@ -13,6 +13,7 @@ require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const songsRouter = require('./routes/songs');
+const commentsRouter = require('./routes/comments');
 
 const app = express();
 
