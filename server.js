@@ -40,6 +40,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/songs', songsRouter);
+app.use('/', commentsRouter);
 
 
 // catch 404 and forward to error handler

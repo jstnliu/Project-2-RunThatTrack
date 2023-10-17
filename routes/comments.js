@@ -7,5 +7,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 //POST /songs/:id/comments
 router.post('/songs/:id/comments', ensureLoggedIn, commentsCtrl.create);
 
+//DELETE own comment if signed-in
+router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete);
 
 module.exports = router;

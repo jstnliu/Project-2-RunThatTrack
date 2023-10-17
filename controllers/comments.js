@@ -2,6 +2,22 @@ const Song = require('../models/song');
 
 module.exports = {
     create,
+    delete: deleteComment,
+};
+
+function deleteComment(req, res, next) {
+    Song.findOne({
+        'comments._id': req.params.id,
+        'comments.user': req.user._id,
+    }).then ((song) => {
+        if (!song) return res.redirect('/songs');
+        song.comments.remove(req.params.id);
+        song.save().then(() => {
+            res.redirect(`/songs/${song._id}`);
+        }).catch((err) => {
+            return next(err)
+        });
+    });
 };
 
 async function create(req, res) {
@@ -18,4 +34,4 @@ async function create(req, res) {
         console.log(err);
     }
     res.redirect(`/songs/${song._id}`);
-}
+};

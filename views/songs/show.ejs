@@ -14,14 +14,35 @@
 </section>
 <section>
 <h3>Comments</h3>
-    <% if (user) { %>
-        <form method="POST" action="/songs/<% song._id %>/comments">
-            <textarea name="content">Let 'Em Know How You Feel</textarea>
-            <input type="submit" value="Comment">
-        </form>
-    <% } else { %>
-        <p><a href="/google/auth">Sign In</a> to Comment</p>
-    <% } %>
 </section>
-<!-- MUST ADD STUFF TO VIEW COMMENTS STILL -->
-<!-- ASK ABOUT POST /songs//comments (skipping ':id') -->
+<% if (user) { %>
+    <form method="POST" action="/songs/<%= song._id %>/comments">
+        <textarea name="content">Let 'Em Know How You Feel</textarea>
+        <input type="submit" value="Comment">
+    </form>
+<% } else { %>
+    <p>Sign In to Comment</p>
+<% } %>
+    <% if (song.comments.length) { %>
+        <% song.comments.forEach((commentInfo) => { %>
+            <section>
+            <div>
+                <p>
+                <img alt="avatar" src="<%= commentInfo.userAvatar %> referrerpolicy=no-referrer"> 
+                <%= commentInfo.userName %>
+                </p>
+                <p><%= commentInfo.createdAt.toLocaleDateString() %></p>
+                <p><%= commentInfo.content %></p>
+                <p>
+                    <% if (user?._id.equals(commentInfo.user)) { %>
+                    <form action="/comments/<%= commentInfo._id %>?_method=DELETE" method="POST">
+                      <button type="submit">Delete</button>
+                    </form>
+                    <% } %>
+                </p>
+            </div>
+            </section>
+        <% }) %>
+    <% } else { %>
+        <p>Be the First to Comment on this Post</p>
+    <% } %>

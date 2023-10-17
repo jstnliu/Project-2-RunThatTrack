@@ -28,6 +28,9 @@ const songSchema = new Schema({
     caption: {
         type: String,
     }, 
+    comments: [commentSchema]
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Song', songSchema);
