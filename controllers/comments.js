@@ -15,7 +15,7 @@ function deleteComment(req, res, next) {
         song.save().then(() => {
             res.redirect(`/songs/${song._id}`);
         }).catch((err) => {
-            return next(err)
+            return next(err);
         });
     });
 };
