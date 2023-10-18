@@ -2,7 +2,7 @@
 
 <section>
     <div>
-        Song Title: <%= song.title %>
+        Song Title: <em><%= song.title %></em>
     </div>
     <div>
         Artist: <%= song.artist %>
@@ -10,6 +10,9 @@
     <div>
         <%= song.caption %>
     </div>
+    <!-- if is user can edit condn -->
+        <a href="/songs/<%= song._id %>/edit">Edit Song Post</a>
+    
 &nbsp;
 </section>
 <section>

@@ -1,10 +1,12 @@
 const Song = require('../models/song');
+const User = require('../models/user')
 
 module.exports = {
     index,
     new: newSong,
     create,
     show,
+    edit,
 };
 
 async function index(req, res) {
@@ -31,5 +33,15 @@ async function create(req, res) {
 
 async function show(req, res) {
     const song = await Song.findById(req.params.id);
-    res.render('songs/show', { title: 'The Rundown', song})
+    // const user = await User.find({ user: user._id })
+    res.render('songs/show', { title: 'The Rundown', song })
 }
+
+async function edit(req, res) {
+    const song = await Song.findById(req.params.id);
+    res.render('songs/edit', {
+        title: 'Changed Your Mind on Something?',
+        song
+    });
+}
+

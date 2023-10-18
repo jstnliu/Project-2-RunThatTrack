@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<form action="/songs/<%= song._id %>?_method=PUT" method="POST">
+    <div>
+        Song Title: <em><%= song.title %></em>
+    </div>
+    <div>
+        Artist: <%= song.artist %>
+    </div>
+    <textarea type="text" name="caption" ><%= song.caption %></textarea>
+    <button type="submit">Update Post</button>
+</form>
