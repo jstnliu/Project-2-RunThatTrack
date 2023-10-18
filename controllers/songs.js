@@ -7,6 +7,7 @@ module.exports = {
     create,
     show,
     edit,
+    update,
 };
 
 async function index(req, res) {
@@ -43,5 +44,15 @@ async function edit(req, res) {
         title: 'Changed Your Mind on Something?',
         song
     });
+}
+
+async function update(req, res) {
+    const updatedSong = await Song.updateOne({ _id: req.params.id }, req.body);
+        try {
+            await updatedSong.save()
+        } catch (err) {
+            console.log(err)
+        }
+    res.redirect(`/songs/${req.params.id}`)
 }
 
