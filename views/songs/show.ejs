@@ -2,6 +2,10 @@
 
 <section>
     <div>
+        <img alt="avatar" src="<%= song.userAvatar %> referrerpolicy=no-referrer"> 
+        <%= song.userName %>
+    </div>
+    <div>
         Song Title: <em><%= song.title %></em>
     </div>
     <div>
@@ -12,17 +16,18 @@
         <%= song.caption %>
     </div>
     <br>
-    <!-- if () statement so only user that made post can edit -->
+    <% if (user?._id.equals(song.user)) { %>
     <a href="/songs/<%= song._id %>/edit">Edit Song Post</a>  
-&nbsp;
+    <% } %>
 </section>
+&nbsp;
 <section>
 <h3>Comments</h3>
 </section>
 <% if (user) { %>
     <form method="POST" action="/songs/<%= song._id %>/comments">
         <textarea name="content">Let 'Em Know How You Feel</textarea>
-        <input type="submit" value="Comment">
+        <button type="submit">Comment</button> 
     </form>
 <% } else { %>
     <p>Sign In to Comment</p>
@@ -52,3 +57,5 @@
     <% } else { %>
         <p>Be the First to Comment on this Post</p>
     <% } %>
+
+<%- include('../partials/footer') %>

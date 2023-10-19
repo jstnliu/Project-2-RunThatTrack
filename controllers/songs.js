@@ -10,6 +10,9 @@ module.exports = {
 };
 
 async function index(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     const songs = await Song.find({});
     res.render('songs/index', { title: 'All Posts', songs});
 }
@@ -19,6 +22,9 @@ async function newSong(req, res) {
 }
 
 async function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     try {
         // Update this line because now we need the _id of the new movie
         const song = await Song.create(req.body);
