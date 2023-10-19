@@ -3,6 +3,7 @@ const Song = require('../models/song');
 module.exports = {
     create,
     delete: deleteComment,
+    edit
 };
 
 function deleteComment(req, res, next) {
@@ -35,3 +36,16 @@ async function create(req, res) {
     }
     res.redirect(`/songs/${song._id}`);
 };
+
+async function edit(req, res) {
+    // query on the property of a subdoc
+    const song = await Song.findOne({ 'comments._id': req.params.id });
+    // find comment subdoc using id method on Mongoose arrays
+    const comment = song.comments.id(req.params.id);
+    //render comments/edit.ejs
+    res.render('comments/edit', { 
+        title: 'Take Back What Ya Said?',
+        comment, 
+    });
+};
+

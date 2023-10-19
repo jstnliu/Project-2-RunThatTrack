@@ -1,5 +1,4 @@
 const Song = require('../models/song');
-const User = require('../models/user')
 
 module.exports = {
     index,
@@ -49,7 +48,7 @@ async function edit(req, res) {
 async function update(req, res) {
     const updatedSong = await Song.updateOne({ _id: req.params.id }, req.body);
         try {
-            await updatedSong.save()
+            await updatedSong
         } catch (err) {
             console.log(err)
         }

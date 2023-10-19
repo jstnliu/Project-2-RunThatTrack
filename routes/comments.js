@@ -3,11 +3,16 @@ const router = express.Router();
 const commentsCtrl = require('../controllers/comments');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-// posting a comment if signed-in
-//POST /songs/:id/comments
-router.post('/songs/:id/comments', ensureLoggedIn, commentsCtrl.create);
+// handle edit comment page redirect
+// GET /comments/:id/edit
+router.get('/comments/:id/edit', ensureLoggedIn, commentsCtrl.edit);
+// handle updated comment submission
+// PUT /:id 
 
-//DELETE own comment if signed-in
+// posting a comment if signed-in
+// POST /songs/:id/comments
+router.post('/songs/:id/comments', ensureLoggedIn, commentsCtrl.create);
+// DELETE own comment if signed-in
 router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete);
 
 module.exports = router;
