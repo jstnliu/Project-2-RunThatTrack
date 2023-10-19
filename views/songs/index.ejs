@@ -2,19 +2,19 @@
 
 <% if (songs.length) { %>
     <% songs.forEach((song) => { %>
-        <div>
-            <!-- if condition for user -->
-        </div>
+        <!-- <div>
+            display user's name and avatar
+        </div> -->
         <div>
             <em><a href="/songs/<%= song._id %>"><%= song.title %></a></em>
         </div>
         <div>
             By <%= song.artist %>
         </div>
+        &nbsp;
         <div>
             <%= song.caption %>
         </div>
-    &nbsp;
    <% }); %>
 <% } else { %>
     <h2>No Posts Yet...</h2>

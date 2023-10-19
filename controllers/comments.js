@@ -3,7 +3,8 @@ const Song = require('../models/song');
 module.exports = {
     create,
     delete: deleteComment,
-    edit
+    edit,
+    update,
 };
 
 function deleteComment(req, res, next) {
@@ -49,3 +50,18 @@ async function edit(req, res) {
     });
 };
 
+async function update(req, res) {
+    const song = await Song.findOne({ 'comments._id': req.params.id });
+    // find comment subdoc using id method
+    const commentSubDoc = song.comments.id(req.params.id);
+    // ensure comment was created by logged-in user
+    if (!commentSubDoc.user.equals(req.user._id)) return res.redirect (`/songs/${song._id}`);
+    // update text of the comment
+    commentSubDoc.content = req.body.content;
+    try {
+        await song.save();
+    } catch(err) {
+        console.log(err);
+    }
+    res.redirect(`/songs/${song._id}`);
+};

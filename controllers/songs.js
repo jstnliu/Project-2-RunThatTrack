@@ -34,14 +34,17 @@ async function create(req, res) {
 async function show(req, res) {
     const song = await Song.findById(req.params.id);
     // const user = await User.find({ user: user._id })
-    res.render('songs/show', { title: 'The Rundown', song })
+    res.render('songs/show', { 
+        title: 'The Rundown', 
+        song, 
+    })
 }
 
 async function edit(req, res) {
     const song = await Song.findById(req.params.id);
     res.render('songs/edit', {
         title: 'Changed Your Mind on Something?',
-        song
+        song,
     });
 }
 

@@ -7,12 +7,13 @@
     <div>
         Artist: <%= song.artist %>
     </div>
+    &nbsp;
     <div>
         <%= song.caption %>
     </div>
-    <!-- if is user can edit condn -->
-        <a href="/songs/<%= song._id %>/edit">Edit Song Post</a>
-    
+    <br>
+    <!-- if () statement so only user that made post can edit -->
+    <a href="/songs/<%= song._id %>/edit">Edit Song Post</a>  
 &nbsp;
 </section>
 <section>
@@ -41,6 +42,7 @@
                     <form action="/comments/<%= commentInfo._id %>?_method=DELETE" method="POST">
                       <button type="submit">Delete</button>
                     </form>
+                    <br>
                     <a href="/comments/<%= commentInfo._id %>/edit">Edit Comment</a>
                     <% } %>
                 </p>
