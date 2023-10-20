@@ -1,17 +1,15 @@
 @font-face {
-  font-family: 'laptop_outlineoutline';
-  src: url('../fonts/laptopoutline-z8exg-webfont.woff2') format('woff2'),
-       url('../fonts/laptopoutline-z8exg-webfont.woff') format('woff');
-  font-family: 'stepalangeregular';
-  src: url('../fonts/stepalange-gxolp-webfont.woff2') format('woff2'),
-       url('../fonts/stepalange-gxolp-webfont.woff') format('woff');
+  font-family: 'Poland canned into Future';
+  src: url('/fonts/PolandCannedIntoFuture-OxE3.ttf');
+}
+
+@font-face {
   font-family: "Wayfarer's Toy Box Regular";
   src: url('/fonts/WayfarersToyBoxRegular-gxxER.ttf');
-       
 }
 
 html {
-  font-size: 1.75em;
+  font-size: 1.25em;
  } 
 
 .index-div, .center {
@@ -19,7 +17,7 @@ html {
 }
 
 .h1-font {
-  font-family: "Wayfarer's Toy Box Regular", stepalangeregular;
+  font-family: "Wayfarer's Toy Box Regular", 'Poland canned into Future';
   text-align: center;
 }
 
@@ -28,7 +26,7 @@ body {
 }
 
 .font {
-  font-family: 'stepalangeregular';
+  font-family:  "Wayfarer's Toy Box Regular", 'Poland canned into Future' ;
 }
 
 .navbar {
