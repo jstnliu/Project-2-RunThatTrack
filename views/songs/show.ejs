@@ -19,7 +19,9 @@
     </div>
     <br>
     <% if (user?._id.equals(song.user)) { %>
-    <a class="link" href="/songs/<%= song._id %>/edit">Edit Song Post</a>  
+    <div class="right">
+        <a class="link" href="/songs/<%= song._id %>/edit">Edit Song Post</a>  
+    </div>
     <% } %>
 </section>
 &nbsp;
@@ -28,9 +30,11 @@
 </section>
 <% if (user) { %>
     <form class="commentform" method="POST" action="/songs/<%= song._id %>/comments">
-        <textarea class="form-control" name="content">Let 'Em Know How You Feel</textarea>
+        <textarea class="form-control" placeholder="Let 'Em Know How You Feel" name="content"></textarea>
         <br>
-        <button class="btn btn-secondary" type="submit">Comment</button> 
+        <div class="right">
+            <button class="btn btn-secondary" type="submit">Comment</button> 
+        </div>
     </form>
     &nbsp;
 <% } else { %>
@@ -52,14 +56,19 @@
                 <div class="col">
                     <p><%= commentInfo.content %></p>
                 </div>
-                <p>
-                    <% if (user?._id.equals(commentInfo.user)) { %>
+                <% if (user?._id.equals(commentInfo.user)) { %>
+                    <p class="right">
                         <a class="link" href="/comments/<%= commentInfo._id %>/edit">Edit Comment</a>
                         <form action="/comments/<%= commentInfo._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-danger" type="submit">Delete</button>
+                            <div class="right">
+                                <button class="btn btn-danger btn-sm" type="submit"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                                    Delete
+                                </button>
+                            </div>
                         </form>
-                    <% } %>
-                </p>
+                    </p>
+                <% } %>
             </div>
             </section>
         <% }) %>

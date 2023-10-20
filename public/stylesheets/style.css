@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: 30px;
+  font-size: 1.75em;
  } 
 
 .index-div, .center {
@@ -36,9 +36,15 @@ body {
 .link {
   color: lightgray;
   transition-duration: 0.7s;
+  font-size: 0.75em
 }
 
-.link:hover {
+.song-link {
+  color: lightgray;
+  transition-duration: 0.7s;
+}
+
+.link:hover, .song-link:hover {
   color: rgb(30, 215, 96);
 }
 
@@ -46,9 +52,13 @@ body {
   height: 15px;
 }
 
+textarea.form-control::placeholder {
+  color: lightgray
+}
+
 textarea.form-control, input.form-control {
-  background: rgb(40, 40, 40);
   color: lightgray;
+  background-color: rgb(40, 40, 40);
 }
 
 html, .colorbg {
@@ -66,7 +76,7 @@ html, .colorbg {
   margin-bottom: 5px;
 }
 
-.col2 {
+.col2, .right {
   text-align: right;
 }
 
