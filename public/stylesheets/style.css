@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'laptop_outlineoutline';
-  src: url('laptopoutline-z8exg-webfont.woff2') format('woff2'),
-       url('laptopoutline-z8exg-webfont.woff') format('woff');
+  src: 'fonts/laptopoutline-z8exg-webfont.woff2' format('woff2'),
+       'fonts/laptopoutline-z8exg-webfont.woff' format('woff');
   font-weight: normal;
   font-style: normal;
   font-family: 'stepalangeregular';
-  src: url('stepalange-gxolp-webfont.woff2') format('woff2'),
-       url('stepalange-gxolp-webfont.woff') format('woff');
+  src: 'fonts/stepalange-gxolp-webfont.woff2' format('woff2'),
+       'fonts/stepalange-gxolp-webfont.woff' format('woff');
   font-weight: normal;
   font-style: normal;
   font-family: 'wayfarers_toy_boxregular';
-  src: url('wayfarerstoyboxregular-gxxer-webfont.woff2') format('woff2'),
-       url('wayfarerstoyboxregular-gxxer-webfont.woff') format('woff');
+  src: 'fonts/wayfarerstoyboxregular-gxxer-webfont.woff2' format('woff2'),
+       'fonts/wayfarerstoyboxregular-gxxer-webfont.woff' format('woff');
   font-weight: normal;
   font-style: normal;
 }
