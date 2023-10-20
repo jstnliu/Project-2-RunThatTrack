@@ -1,9 +1,19 @@
 @font-face {
-  font-family: 'LapTop Outline';
-  src: url('/Users/justinliu/Library/Fonts/LaptopOutline-z8EXG.otf') format('otf');
-  /* Add other font formats if available (e.g., .ttf, .otf) */
-  font-family: 'StepalangeRegular';
-  src: url('/Users/justinliu/Library/Fonts/Stepalange-gxOLP.otf') format('otf');
+  font-family: 'laptop_outlineoutline';
+  src: url('laptopoutline-z8exg-webfont.woff2') format('woff2'),
+       url('laptopoutline-z8exg-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'stepalangeregular';
+  src: url('stepalange-gxolp-webfont.woff2') format('woff2'),
+       url('stepalange-gxolp-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 html {
@@ -15,10 +25,8 @@ html {
 }
 
 h1 {
-  font-family: 'LapTop Outline';
-  font-size: 30em;
+  font-family: 'laptop_outlineoutline';
   text-align: center;
-  color: rgb(30, 215, 96);
 }
 
 body {
@@ -26,7 +34,7 @@ body {
 }
 
 .font {
-  font-family: 'StepalangeRegular';
+  font-family: 'stepalangeregular';
 }
 
 .navbar {
