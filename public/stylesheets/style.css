@@ -12,6 +12,10 @@ html {
   font-size: 1.25em;
  } 
 
+ .disc {
+  height: 75px;
+ }
+
 .index-div, .center {
   text-align: center;
 }
