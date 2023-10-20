@@ -21,8 +21,5 @@ router.get('/:id/edit', ensureLoggedIn, songsCtrl.edit);
 // must be signed in 
 // PUT /:id
 router.put('/:id', ensureLoggedIn, songsCtrl.update);
-// delete post 
-// DELETE /songs/:id
-// router.delete('/:id', ensureLoggedIn, songsCtrl.delete);
 
 module.exports = router;

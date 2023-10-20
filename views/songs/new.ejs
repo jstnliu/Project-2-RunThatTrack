@@ -1,15 +1,20 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
-
+&nbsp;
+<div id="border">
 <form action="/songs" method="POST">
     <label>Song Title:</label>
-    <input type="text" name="title">
-    <label>Artist Name:</label>
-    <input type="text" name="artist">
+    <input class="form-control" type="text" name="title">
+    <label>Artist Name(s):</label>
+    <input class="form-control" type="text" name="artist">
     <label>Share Your Thoughts Below...</label>
-    <textarea name="caption"></textarea>
-    <button type="submit">Share Post</button>
+    <textarea class="form-control" name="caption"></textarea>
+    <br>
+    <div class="center">
+        <button class="btn btn-secondary" type="submit">Share Post</button>
+    </div>
 </form>
+</div>
 
 <%- include('../partials/footer') %>

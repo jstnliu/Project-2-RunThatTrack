@@ -1,16 +1,19 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
-
+&nbsp;
+<div class="row">
 <% if (songs.length) { %>
     <% songs.forEach((song) => { %>
-    <div class="row">
-        <div>
+    <div id="border" class="center col-4 container-fluid">
+        &nbsp;
+        <div id="profile">
             <img class="profilepicture" alt="avatar" referrerpolicy="no-referrer" src="<%= song.userAvatar %>" > 
-            <%= song.userName %>
+            <p><%= song.userName %></p>
         </div>
+        &nbsp;
         <div>
-            <em><a href="/songs/<%= song._id %>"><%= song.title %></a></em>
+            <em><a class="link" href="/songs/<%= song._id %>"><%= song.title %></a></em>
         </div>
         <div>
             By <%= song.artist %>
@@ -25,5 +28,6 @@
     <h2>No Posts Yet...</h2>
     <a href="/songs/new">Get Started on a Post Here!</a>
 <% } %>
+</div>
 
 <%- include('../partials/footer') %>

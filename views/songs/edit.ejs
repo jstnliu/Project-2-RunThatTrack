@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <h1><%= title %></h1>
-
+&nbsp;
 <div id="border">
     <form action="/songs/<%= song._id %>?_method=PUT" method="POST">
         <div>
@@ -12,7 +12,7 @@
         </div>
         Revised Caption: <textarea class="form-control" type="text" name="caption" ><%= song.caption %></textarea>
         <br>
-        <button type="submit">Update Post</button>
+        <button class="btn btn-secondary" type="submit">Update Post</button>
     </form>
 </div>
 

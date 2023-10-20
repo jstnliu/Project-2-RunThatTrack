@@ -2,6 +2,16 @@
   font-family: 'LapTop Outline';
   src: url('/Users/justinliu/Library/Fonts/LaptopOutline-z8EXG.otf') format('otf');
   /* Add other font formats if available (e.g., .ttf, .otf) */
+  font-family: 'StepalangeRegular';
+  src: url('/Users/justinliu/Library/Fonts/Stepalange-gxOLP.otf') format('otf');
+}
+
+html {
+  font-size: 30px;
+ } 
+
+.index-div, .center {
+  text-align: center;
 }
 
 h1 {
@@ -12,28 +22,24 @@ h1 {
 }
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 30px;
+}
+
+.font {
+  font-family: 'StepalangeRegular';
 }
 
 .navbar {
-  padding: none;
   border-radius: 10px;
 }
 
 .link {
   color: lightgray;
+  transition-duration: 0.7s;
 }
 
-a:hover {
+.link:hover {
   color: rgb(30, 215, 96);
-}
-
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
 }
 
 .login img {
@@ -50,19 +56,14 @@ html, .colorbg {
   color: lightgray;
 }
 
-button {
-  background-color: lightgray;
-  transition: background-color .75s;
-  border-radius: 50%;
-}
-
-button:hover {
-  background-color: gray;
+#profile {
+  border-bottom: lightgray solid;
 }
 
 .profilepicture {
-  height: 35px;
+  height: 50px;
   border-radius: 50%;
+  margin-bottom: 5px;
 }
 
 .col2 {
@@ -72,5 +73,5 @@ button:hover {
 #border {
   border: rgb(30, 215, 96) 5px solid;
   border-radius: 10px;
-  padding: 6.5px;
+  padding: 5px;
 }

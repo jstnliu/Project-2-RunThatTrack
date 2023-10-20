@@ -3,7 +3,7 @@
 <h1><%= title %></h1>
 
 <section id="border">
-    <div>
+    <div id="profile">
         <img class="profilepicture" alt="avatar" referrerpolicy="no-referrer" src="<%= song.userAvatar %>" > 
         <%= song.userName %>
     </div>
@@ -11,7 +11,7 @@
         Song Title: <em><%= song.title %></em>
     </div>
     <div>
-        Artist: <%= song.artist %>
+        Artist(s): <%= song.artist %>
     </div>
     &nbsp;
     <div>
@@ -30,7 +30,7 @@
     <form class="commentform" method="POST" action="/songs/<%= song._id %>/comments">
         <textarea class="form-control" name="content">Let 'Em Know How You Feel</textarea>
         <br>
-        <button class=comment-button type="submit">Comment</button> 
+        <button class="btn btn-secondary" type="submit">Comment</button> 
     </form>
     &nbsp;
 <% } else { %>
@@ -56,7 +56,7 @@
                     <% if (user?._id.equals(commentInfo.user)) { %>
                         <a class="link" href="/comments/<%= commentInfo._id %>/edit">Edit Comment</a>
                         <form action="/comments/<%= commentInfo._id %>?_method=DELETE" method="POST">
-                            <button type="submit">Delete</button>
+                            <button class="btn btn-danger" type="submit">Delete</button>
                         </form>
                     <% } %>
                 </p>
