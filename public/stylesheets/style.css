@@ -4,16 +4,16 @@
        url('laptopoutline-z8exg-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
-}
-
-@font-face {
   font-family: 'stepalangeregular';
   src: url('stepalange-gxolp-webfont.woff2') format('woff2'),
        url('stepalange-gxolp-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
+  font-family: 'wayfarers_toy_boxregular';
+  src: url('wayfarerstoyboxregular-gxxer-webfont.woff2') format('woff2'),
+       url('wayfarerstoyboxregular-gxxer-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
@@ -24,8 +24,8 @@ html {
   text-align: center;
 }
 
-h1 {
-  font-family: 'laptop_outlineoutline';
+.h1-font {
+  font-family: 'laptop_outlineoutline', stepalangeregular;
   text-align: center;
 }
 
