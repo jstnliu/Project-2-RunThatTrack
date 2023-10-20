@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 
-<section>
+<h1><%= title %></h1>
+
+<section id="border">
     <div>
-        <img alt="avatar" src="<%= song.userAvatar %> referrerpolicy=no-referrer"> 
+        <img class="profilepicture" alt="avatar" referrerpolicy="no-referrer" src="<%= song.userAvatar %>" > 
         <%= song.userName %>
     </div>
     <div>
@@ -17,7 +19,7 @@
     </div>
     <br>
     <% if (user?._id.equals(song.user)) { %>
-    <a href="/songs/<%= song._id %>/edit">Edit Song Post</a>  
+    <a class="link" href="/songs/<%= song._id %>/edit">Edit Song Post</a>  
     <% } %>
 </section>
 &nbsp;
@@ -25,30 +27,36 @@
 <h3>Comments</h3>
 </section>
 <% if (user) { %>
-    <form method="POST" action="/songs/<%= song._id %>/comments">
-        <textarea name="content">Let 'Em Know How You Feel</textarea>
-        <button type="submit">Comment</button> 
+    <form class="commentform" method="POST" action="/songs/<%= song._id %>/comments">
+        <textarea class="form-control" name="content">Let 'Em Know How You Feel</textarea>
+        <button class=comment-button type="submit">Comment</button> 
     </form>
+    &nbsp;
 <% } else { %>
     <p>Sign In to Comment</p>
 <% } %>
     <% if (song.comments.length) { %>
         <% song.comments.forEach((commentInfo) => { %>
-            <section>
-            <div>
-                <p>
-                <img alt="avatar" src="<%= commentInfo.userAvatar %> referrerpolicy=no-referrer"> 
-                <%= commentInfo.userName %>
-                </p>
-                <p><%= commentInfo.createdAt.toLocaleDateString() %></p>
-                <p><%= commentInfo.content %></p>
+            <section id="border">
+            <div class="row"> 
+                <div class="col-6">
+                    <p>
+                        <img class="profilepicture" alt="avatar" referrerpolicy="no-referrer" src="<%= commentInfo.userAvatar %>"> 
+                        <%= commentInfo.userName %>
+                    </p>
+                </div>
+                <div class="col-6 col2">
+                    <p>Created <%= commentInfo.createdAt.toLocaleDateString() %></p>
+                </div>
+                <div class="col">
+                    <p><%= commentInfo.content %></p>
+                </div>
                 <p>
                     <% if (user?._id.equals(commentInfo.user)) { %>
-                    <form action="/comments/<%= commentInfo._id %>?_method=DELETE" method="POST">
-                      <button type="submit">Delete</button>
-                    </form>
-                    <br>
-                    <a href="/comments/<%= commentInfo._id %>/edit">Edit Comment</a>
+                        <a class="link" href="/comments/<%= commentInfo._id %>/edit">Edit Comment</a>
+                        <form action="/comments/<%= commentInfo._id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
                     <% } %>
                 </p>
             </div>

@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
+<h1><%= title %></h1>
+
 <% if (songs.length) { %>
     <% songs.forEach((song) => { %>
     <div class="row">
         <div>
-            <img alt="avatar" src="<%= song.userAvatar %> referrerpolicy=no-referrer"> 
+            <img class="profilepicture" alt="avatar" referrerpolicy="no-referrer" src="<%= song.userAvatar %>" > 
             <%= song.userName %>
         </div>
         <div>

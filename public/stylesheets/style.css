@@ -3,8 +3,17 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.navbar {
+  padding: none;
+}
+
+.link {
+  color: lightgray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(30, 215, 96);
 }
 
 .login {
@@ -16,4 +25,33 @@ a {
 
 .login img {
   height: 15px;
+}
+
+textarea.form-control, input.form-control {
+  background: rgb(40, 40, 40);
+  color: lightgray;
+}
+
+html, .colorbg {
+  background-color: rgb(40, 40, 40);
+  color: lightgray;
+}
+
+.button-color {
+  background-color: lightgray;
+}
+
+.profilepicture {
+  height: 35px;
+  border-radius: 50%;
+}
+
+.col2 {
+  text-align: right;
+}
+
+#border {
+  border: rgb(30, 215, 96) 5px solid;
+  border-radius: 10px;
+  padding: 6.5px;
 }

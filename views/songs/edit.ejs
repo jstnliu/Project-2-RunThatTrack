@@ -1,14 +1,19 @@
 <%- include('../partials/header') %>
 
-<form action="/songs/<%= song._id %>?_method=PUT" method="POST">
-    <div>
-        Song Title: <input type="text" name="title" value="<%= song.title %>">
-    </div>
-    <div>
-        Artist: <input type="text" name="artist" value="<%= song.artist %>">
-    </div>
-    <textarea type="text" name="caption" ><%= song.caption %></textarea>
-    <button type="submit">Update Post</button>
-</form>
+<h1><%= title %></h1>
+
+<div id="border">
+    <form action="/songs/<%= song._id %>?_method=PUT" method="POST">
+        <div>
+            Song Title: <input class="form-control" type="text" name="title" value="<%= song.title %>">
+        </div>
+        <div>
+            Artist: <input class="form-control" type="text" name="artist" value="<%= song.artist %>">
+        </div>
+        Revised Caption: <textarea class="form-control" type="text" name="caption" ><%= song.caption %></textarea>
+        <br>
+        <button class="button-color" type="submit">Update Post</button>
+    </form>
+</div>
 
 <%- include('../partials/footer') %>
