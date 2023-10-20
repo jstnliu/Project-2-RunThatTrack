@@ -6,4 +6,4 @@
 
 ---
 
-*Run That Track* is a *Twitter*-esque web application where users can create, view, and comment on posts about different songs  
+*Run That Track!* is a *Twitter*-esque web application where users can create, view, and comment on posts about different songs that others love.
