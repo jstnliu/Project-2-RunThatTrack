@@ -1,9 +1,11 @@
 <%- include('../partials/header') %>
 
+<h1><%= title %></h1>
+
 <form method="POST" action="/comments/<%= comment._id %>?_method=PUT">
     <div>
         <textarea name="content"><%= comment.content %></textarea>
-        <button class="button-color" type="submit">Update Comment</button>  
+        <button type="submit">Update Comment</button>  
     </div>
 </form>
 

@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'LapTop Outline';
+  src: url('/Users/justinliu/Library/Fonts/LaptopOutline-z8EXG.otf') format('otf');
+  /* Add other font formats if available (e.g., .ttf, .otf) */
+}
+
+h1 {
+  font-family: 'LapTop Outline';
+  font-size: 30em;
+  text-align: center;
+  color: rgb(30, 215, 96);
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,11 +18,11 @@ body {
 
 .navbar {
   padding: none;
+  border-radius: 10px;
 }
 
 .link {
   color: lightgray;
-  text-decoration: none;
 }
 
 a:hover {
@@ -37,8 +50,14 @@ html, .colorbg {
   color: lightgray;
 }
 
-.button-color {
+button {
   background-color: lightgray;
+  transition: background-color .75s;
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: gray;
 }
 
 .profilepicture {

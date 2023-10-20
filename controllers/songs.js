@@ -18,7 +18,7 @@ async function index(req, res) {
 }
 
 async function newSong(req, res) {
-    res.render('songs/new', { title: 'Create a Song Post!', errorMsg: '' });
+    res.render('songs/new', { title: 'Create a Song Post', errorMsg: '' });
 }
 
 async function create(req, res) {

@@ -2,11 +2,17 @@
 
 <h1><%= title %></h1>
 
-<% if (user) { %>
-    <p>Use Above Menu to Start Posting about Songs You've Been Listening to%></p>
-<% } else { %>
-    <p>Select 'All Posts' to View What Others Are Saying!</p>
-    <p>Log In to Create Your Own Post!</p>
-<% } %>
+<div>
+    <% if (user) { %>
+        <div class="index-div">
+            <p>Use Above Menu to Start Posting about Songs You've Been Listening to%></p>
+        </div>
+    <% } else { %>
+        <div class="index-div">
+            <p>Select 'All Posts' to View What Others Are Saying!</p>
+            <p>Log In to Create Your Own Post!</p>
+        </div>
+    <% } %>
+</div>
 
 <%- include('./partials/footer') -%>

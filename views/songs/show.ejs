@@ -29,6 +29,7 @@
 <% if (user) { %>
     <form class="commentform" method="POST" action="/songs/<%= song._id %>/comments">
         <textarea class="form-control" name="content">Let 'Em Know How You Feel</textarea>
+        <br>
         <button class=comment-button type="submit">Comment</button> 
     </form>
     &nbsp;
