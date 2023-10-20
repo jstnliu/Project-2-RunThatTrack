@@ -5,9 +5,9 @@
   font-family: 'stepalangeregular';
   src: url('../fonts/stepalange-gxolp-webfont.woff2') format('woff2'),
        url('../fonts/stepalange-gxolp-webfont.woff') format('woff');
-  font-family: 'wayfarers_toy_boxregular';
-  src: url('../fonts/wayfarerstoyboxregular-gxxer-webfont.woff2') format('woff2'),
-       url('../fonts/wayfarerstoyboxregular-gxxer-webfont.woff') format('woff');
+  font-family: "Wayfarer's Toy Box Regular";
+  src: url('/fonts/WayfarersToyBoxRegular-gxxER.ttf');
+       
 }
 
 html {
@@ -19,7 +19,7 @@ html {
 }
 
 .h1-font {
-  font-family: 'laptop_outlineoutline', stepalangeregular;
+  font-family: "Wayfarer's Toy Box Regular", stepalangeregular;
   text-align: center;
 }
 
